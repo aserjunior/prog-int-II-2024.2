@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Novo Veículo {% endblock %}
+
+{% block title_page %} Novo Veículo {% endblock %}
+
+{% block content %}
+  <form action="/veiculo_form" method="post">
+    <select name="modelo_id">
+      {% for modelo in modelos %}
+        <option value="{{ modelo.id }}">{{ modelo.nome }}</option>
+      {% endfor %}
+    </select>
+    <input type="text" name="cor" placeholder="Cor do Veículo..">
+    <input type="text" name="ano_fabricacao" placeholder="Ano de Fabricação..">
+    <input type="text" name="ano_modelo" placeholder="Ano do Modelo..">
+    <input type="text" name="valor" placeholder="Valor do Veículo..">
+    <input type="text" name="placa" placeholder="Placa do Veículo..">
+    <input type="submit" value="Salvar Veículo" />
+  </form>
+{% endblock %}

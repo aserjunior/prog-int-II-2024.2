@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Modelos de Veículos {% endblock %}
+
+{% block title_page %} Lista de Modelos de Veículos Cadastrados {% endblock %}
+
+{% block content %}
+    <div>
+      <button>
+        <a href="/modelo_veiculo_form">Novo Modelo de Veículo</a>
+      </button> 
+    </div>
+    <ul>
+      {% for modelo in modelos %}
+        <li>{{ modelo.nome }} - Montadora: {{ modelo.montadora_id }} - Motor: {{ modelo.motorizacao }} - Turbo: {{ modelo.turbo }} - Automático: {{ modelo.automatico }} - Valor: R$ {{ modelo.valor_referencia }}</li>
+      {% endfor %}
+    </ul>
+{% endblock %}

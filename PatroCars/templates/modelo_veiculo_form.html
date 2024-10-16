@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Novo Modelo de Veículo {% endblock %}
+
+{% block title_page %} Novo Modelo de Veículo {% endblock %}
+
+{% block content %}
+  <form action="/modelo_veiculo_form" method="post">
+    <input type="text" name="nome" placeholder="Nome do Veículo..">
+    <select name="montadora_id">
+      {% for montadora in montadoras %}
+        <option value="{{ montadora.id }}">{{ montadora.nome }}</option>
+      {% endfor %}
+    </select>
+    <input type="text" name="valor_referencia" placeholder="Valor de Referência..">
+    <input type="text" name="motorizacao" placeholder="Motorização..">
+    <label for="turbo">Possui Turbo?</label>
+    <input type="checkbox" name="turbo">
+    <label for="automatico">Automático?</label>
+    <input type="checkbox" name="automatico">
+    <input type="submit" value="Salvar Modelo" />
+  </form>
+{% endblock %}
