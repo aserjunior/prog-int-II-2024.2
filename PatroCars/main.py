@@ -18,6 +18,11 @@ modelos_veiculos = ModeloVeiculoRepository()
 veiculos = VeiculoRepository()
 
 
+@app.get("/teste")
+def listar_teste(pais: str = None):
+    return {"message": f"{pais}"}
+
+
 @app.get("/montadora_list")
 def listar_montadoras(request: Request, ordenar_por: str = None, ordem: str = "asc"):
     montadoras_list = montadoras.get_all()
